@@ -14,7 +14,7 @@ services:
       - ./server/:/server_source/
 
     ports:
-      - 8000:8001
+      - 8001:8000
 
     command: bash /start.sh
 
@@ -34,7 +34,7 @@ services:
       - POSTGRES_PASSWORD=django
 
     ports:
-      - 5432:5433
+      - 5433:5432
 
 volumes:
   dev_db_data:
