@@ -1,7 +1,7 @@
 services:
 
   mvp_server:
-    container_name: Mvp Server
+    container_name: MvpServer
 
     build:
       context: .
@@ -23,7 +23,7 @@ services:
 
   mvp_database:
     image: postgres:15.1-alpine
-    container_name: Mvp Database
+    container_name: MvpDatabase
 
     volumes:
       - dev_db_data:/var/lib/postgresql/data/
