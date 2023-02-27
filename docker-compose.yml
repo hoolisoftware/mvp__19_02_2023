@@ -1,7 +1,7 @@
 services:
 
   mvp_server:
-    container_name: Server
+    container_name: Mvp Server
 
     build:
       context: .
@@ -19,11 +19,11 @@ services:
     command: bash /start.sh
 
     depends_on:
-      - database
+      - mvp_database
 
   mvp_database:
     image: postgres:15.1-alpine
-    container_name: Database
+    container_name: Mvp Database
 
     volumes:
       - dev_db_data:/var/lib/postgresql/data/
