@@ -26,7 +26,7 @@ class Skill(MPTTModel):
         verbose_name_plural = 'навыки'
 
     def __str__(self):
-        return self.name
+        return f'[{self.skill_tree.name}] -> {"".join([f"/{ ancestor.name }" for ancestor in self.get_ancestors(include_self=True)])}'
 
 
 class SkillPoint(models.Model):
@@ -40,4 +40,4 @@ class SkillPoint(models.Model):
         verbose_name_plural = 'баллы навыков'
 
     def __str__(self):
-        return self.title
+        return f'{self.skill} -> {self.order}.{self.title}'
