@@ -1,0 +1,12 @@
+<ul>
+    {% for skill in skills %}
+        <li>
+            <a href="{{ skill.get_absolute_url }}">
+                {{ skill.name }} ({{ skill.points.all.count }} points)
+            </a>
+            {% if skill.children.all %}
+                {% include 'skills/components/skill.django-html' with skills=skill.children.all %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

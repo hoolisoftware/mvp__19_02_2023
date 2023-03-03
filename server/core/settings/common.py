@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'mptt',
 
     'skills',
+    'teams',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,12 @@
+{% extends 'origin/base.django-html' %}
+
+{% block title %}
+Skill Details - {{ object }}
+{% endblock title %}
+
+{% block content %}
+    {% for point in object.points.all %}
+        <h3>{{ point.order }}. {{ point.title }}</h3>
+        <p>{{ point.description }}</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'origin/base.django-html' %}
+
+{% block title %}
+Skill Tree details - {{ object.name }}
+{% endblock %}
+
+{% block content %}
+    {% include 'skills/components/skill.django-html' with skills=object.get_root_skills %}
+{% endblock %}
